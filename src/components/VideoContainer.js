@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import VideoCard from "./VideoCard";
 import { YOUTUBE_VIDEOS_API } from "../utils/constants";
 import { Link } from "react-router-dom";
+import Shimmer from "./Shimmer";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState(null);
@@ -9,7 +10,7 @@ const VideoContainer = () => {
   const getVideos = async () => {
     const data = await fetch(YOUTUBE_VIDEOS_API);
     const json = await data.json();
-    console.log(json.items);
+
     setVideos(json.items);
   };
 
@@ -17,7 +18,7 @@ const VideoContainer = () => {
     getVideos();
   }, []);
 
-  if (videos === null) return <h1>Loading</h1>;
+  if (videos === null) return <Shimmer />;
 
   return (
     <div className="flex flex-wrap justify-center">
