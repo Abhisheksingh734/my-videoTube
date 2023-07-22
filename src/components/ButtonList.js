@@ -19,7 +19,7 @@ const ButtonList = () => {
     "Trailers",
   ];
   return (
-    <div className="flex ">
+    <div className=" hidden sm:block sm:flex">
       {btnList.map((btnName, index) => {
         return <ButtonComponent name={btnName} key={index} />;
       })}

@@ -9,8 +9,8 @@ const SideBar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="w-48">
-      <div className="p-2 w-48 mt-10 border border-gray-200 h-full">
+    <div className="absolute md:relative shadow-2xl rounded-lg bg-white ">
+      <div className="p-2 w-44  border border-gray-200 h-full">
         <ul className="">
           <Link to="/">
             <li className="p-2 border-b-2  text-lg mx-2 my-2 rounded-lg hover:bg-gray-200 cursor-pointer">

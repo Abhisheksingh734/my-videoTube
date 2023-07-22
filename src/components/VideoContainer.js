@@ -28,7 +28,7 @@ const VideoContainer = () => {
   if (videos === null) return <Shimmer />;
 
   return (
-    <div className="flex flex-wrap justify-center">
+    <div className="flex flex-wrap w-[460px] sm:w-full sm:justify-center">
       {videos.map((video) => {
         return (
           <Link key={video.id} to={"/watchpage?v=" + video.id}>

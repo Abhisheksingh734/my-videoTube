@@ -4,7 +4,7 @@ import VideoContainer from "./VideoContainer";
 
 const MainContainer = () => {
   return (
-    <div className="">
+    <div className="flex sm:flex-wrap sm:justify-start">
       <ButtonList />
       <VideoContainer />
     </div>

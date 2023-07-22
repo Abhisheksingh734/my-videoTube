@@ -17,12 +17,11 @@ const WatchPage = () => {
   }, []);
 
   return (
-    <div className="p-4 w-full ">
-      <div className="flex w-full ">
+    <div className="w-[460px] md:w-full md:p-4">
+      <div className="flex flex-wrap md:flex md:w-full">
         <div>
           <iframe
-            width="1200"
-            height="600"
+            className="w-[461px] h-[300px] md:w-[1200px] md:h-[600px]"
             src={"https://www.youtube.com/embed/" + searchParams.get("v")}
             title="YouTube video player"
             frameBorder="0"
@@ -30,11 +29,11 @@ const WatchPage = () => {
             allowFullScreen
           ></iframe>
         </div>
-        <div className="w-full ml-5">
+        <div className="md:w-[600px] md:p-2 ">
           <LiveChat />
         </div>
       </div>
-      <div>
+      <div className="w-[450px] md:w-auto">
         <CommentContainer />
       </div>
     </div>

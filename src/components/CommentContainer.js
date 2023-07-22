@@ -123,7 +123,7 @@ const Comment = ({ data }) => {
   const { name, text } = data;
   return (
     <div>
-      <div className="bg-gray-200 flex w-6/12 flex-row justify-start items-center py-2 my-3 rounded-2xl">
+      <div className="bg-gray-200 w-fit flex flex-row justify-start items-center py-2 my-3 rounded-2xl">
         <img
           className="h-12 mx-2"
           alt="user"
@@ -142,7 +142,7 @@ const CommentList = ({ comments }) => {
   return comments.map((comment, index) => (
     <div>
       <Comment key={index} data={comment} />
-      <div className="pl-10 border-l-2 ml-5">
+      <div className="pl-10 border-l-2 ">
         <CommentList comments={comment.repiles} />
       </div>
     </div>
@@ -152,7 +152,7 @@ const CommentList = ({ comments }) => {
 const CommentContainer = () => {
   return (
     <div className="m-3 p-2">
-      <h1 className="font-bold text-3xl">Comments : </h1>
+      <h1 className="font-bold text-3xl">Nested Comments : </h1>
       <CommentList comments={commentsData} />
     </div>
   );
