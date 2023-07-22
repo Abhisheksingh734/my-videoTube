@@ -7,13 +7,13 @@ import Shimmer from "./Shimmer";
 const VideoContainer = () => {
   const [videos, setVideos] = useState(null);
 
-  const ytVideos = process.env.REACT_APP_YOUTUBE_VIDEOS_URL;
-  const ytApiKey = process.env.REACT_APP_API_KEY;
-  console.log(ytVideos);
-  console.log(ytApiKey);
+  // const ytVideos = process.env.REACT_APP_YOUTUBE_VIDEOS_URL;
+  // const ytApiKey = process.env.REACT_APP_API_KEY;
+  // console.log(ytVideos);
+  // console.log(ytApiKey);
 
   const getVideos = async () => {
-    const data = await fetch(ytVideos + ytApiKey);
+    const data = await fetch(YOUTUBE_VIDEOS_API);
     const json = await data.json();
     console.log(json);
 
