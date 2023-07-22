@@ -12,6 +12,7 @@ const VideoContainer = () => {
   // console.log(ytVideos);
   // console.log(ytApiKey);
 
+  console.log(YOUTUBE_VIDEOS_API);
   const getVideos = async () => {
     const data = await fetch(YOUTUBE_VIDEOS_API);
     const json = await data.json();
