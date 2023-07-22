@@ -28,7 +28,6 @@ const WatchPage = () => {
             frameBorder="0"
             allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            autoplay
           ></iframe>
         </div>
         <div className="w-full ml-5">
