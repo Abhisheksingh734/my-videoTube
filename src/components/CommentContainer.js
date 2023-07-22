@@ -143,7 +143,7 @@ const CommentList = ({ comments }) => {
     <div>
       <Comment key={index} data={comment} />
       <div className="pl-10 border-l-2 ">
-        <CommentList comments={comment.repiles} />
+        <CommentList key={index} comments={comment.repiles} />
       </div>
     </div>
   ));

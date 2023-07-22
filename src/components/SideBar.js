@@ -29,17 +29,17 @@ const SideBar = () => {
         </ul>
         <h1 className="font-bold pt-8 text-xl">Subscriptions</h1>
         <ul className="border-gray-300  border-b-2 p-2">
-          <li className=" text-lg mx-2 ">Music</li>
-          <li className=" text-lg mx-2">Sports</li>
-          <li className=" text-lg mx-2">Gaming</li>
-          <li className=" text-lg mx-2">Movies</li>
+          <li className=" text-lg m-2 ">Music</li>
+          <li className=" text-lg m-2">Sports</li>
+          <li className=" text-lg m-2">Gaming</li>
+          <li className=" text-lg m-2">Movies</li>
         </ul>
         <h1 className="font-bold pt-10  text-xl">Watch Later</h1>
         <ul className=" border-gray-200 border-b-2 p-2">
-          <li className=" text-lg mx-2">Music</li>
-          <li className=" text-lg mx-2">Sports</li>
-          <li className=" text-lg mx-2">Gaming</li>
-          <li className=" text-lg mx-2">Movies</li>
+          <li className=" text-lg m-2">Music</li>
+          <li className=" text-lg m-2">Sports</li>
+          <li className=" text-lg m-2">Gaming</li>
+          <li className=" text-lg m-2">Movies</li>
         </ul>
       </div>
     </div>
