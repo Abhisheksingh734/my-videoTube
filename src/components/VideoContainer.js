@@ -9,6 +9,8 @@ const VideoContainer = () => {
 
   const ytVideos = process.env.REACT_APP_YOUTUBE_VIDEOS_URL;
   const ytApiKey = process.env.REACT_APP_API_KEY;
+  console.log(ytVideos);
+  console.log(ytApiKey);
 
   const getVideos = async () => {
     const data = await fetch(ytVideos + ytApiKey);
