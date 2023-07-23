@@ -63,7 +63,7 @@ const LiveChat = () => {
           onChange={(e) => setLiveMessage(e.target.value)}
           type="text"
           placeholder="Send Your Message"
-          className="-ml-1 border border-gray-700 rounded-lg mx-2 w-96 p-2"
+          className="-ml-1 border border-gray-500 rounded-lg mx-2 w-96 p-2"
         />
         <button className="bg-green-200 rounded-xl p-1">Send</button>
       </form>
