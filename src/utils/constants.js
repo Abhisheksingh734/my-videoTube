@@ -1,4 +1,4 @@
-const GOOGLE_API_KEY = "AIzaSyC9hxDWeSKMjV2aRdDU3vPk7T5zQU7t2cw";
+const GOOGLE_API_KEY = "AIzaSyBPnhppSXaJzMjF9Q5tP8GSO3VgyHhhq74";
 
 export const YOUTUBE_VIDEOS_API =
   "https://corsproxy.io/?https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=US&key=" +
