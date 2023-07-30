@@ -18,7 +18,8 @@ const SideBar = () => {
     >
       <div
         className={
-          "p-2 w-44  border  h-full " + (isDarkTheme && "border border-black")
+          "p-2 w-44  border  h-full " +
+          (isDarkTheme && " bg-slate-800 border border-black")
         }
       >
         <ul className="">
