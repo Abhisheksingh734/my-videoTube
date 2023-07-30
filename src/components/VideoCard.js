@@ -1,12 +1,20 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const VideoCard = ({ info }) => {
   const { snippet, statistics } = info;
 
   const { thumbnails, title, channelTitle } = snippet;
 
+  const isDarkTheme = useSelector((store) => store.app.isDarkTheme);
+
   return (
-    <div className=" w-[461px] sm:w-[304px] md:h-[320px] md:hover:scale-105 sm:mx-4 sm:my-2 h-fit my-2 rounded-lg bg-gray-100  shadow-xl  transition-all ease-in-out hover:shadow-2xl">
+    <div
+      className={
+        " w-[461px] sm:w-[304px] md:h-[345px] md:hover:scale-105 sm:mx-4 sm:my-2 h-fit my-2 rounded-lg bg-gray-100  shadow-xl  transition-all ease-in-out hover:shadow-2xl " +
+        (isDarkTheme && "bg-gray-900 hover:shadow-white")
+      }
+    >
       <img
         className=" cursor-pointer w-full sm:rounded-lg"
         src={thumbnails.medium.url}

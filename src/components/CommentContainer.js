@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const commentsData = [
   {
@@ -120,10 +121,16 @@ const commentsData = [
 ];
 
 const Comment = ({ data }) => {
+  const isDarkTheme = useSelector((store) => store.app.isDarkTheme);
   const { name, text } = data;
   return (
     <div>
-      <div className="bg-gray-200 w-fit flex flex-row justify-start items-center py-2 my-3 rounded-2xl">
+      <div
+        className={
+          "bg-gray-200 w-fit flex flex-row justify-start items-center py-2 my-3 rounded-2xl " +
+          (isDarkTheme && "bg-gray-900 text-white")
+        }
+      >
         <img
           className="h-12 mx-2"
           alt="user"

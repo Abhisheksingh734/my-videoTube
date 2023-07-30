@@ -6,6 +6,8 @@ import store from "./utils/store";
 import MainContainer from "./components/MainContainer";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import WatchPage from "./components/WatchPage";
+import Demo from "./components/Demo";
+import { initializeTheme } from "./utils/appSlice";
 
 const appRouter = createBrowserRouter([
   {
@@ -20,11 +22,16 @@ const appRouter = createBrowserRouter([
         path: "/watchpage",
         element: <WatchPage />,
       },
+      {
+        path: "/demo",
+        element: <Demo />,
+      },
     ],
   },
 ]);
 
 function App() {
+  store.dispatch(initializeTheme());
   return (
     <Provider store={store}>
       <div className="App">

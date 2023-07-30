@@ -1,5 +1,5 @@
-import { useDispatch } from "react-redux";
-import { toggleMenu } from "../utils/appSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { toggelTheme, toggleMenu } from "../utils/appSlice";
 import { useEffect, useState } from "react";
 import { YOUTUBE_SEARCH_API } from "../utils/constants";
 
@@ -31,19 +31,39 @@ const Head = () => {
     dispatch(toggleMenu());
   };
 
+  // dispatching an action for dark theme
+  const toggleThemeHandler = () => {
+    dispatch(toggelTheme());
+  };
+
+  const isDarkTheme = useSelector((store) => store.app.isDarkTheme);
+
   return (
-    <div className="flex w-full p-4 justify-between md:flex md:justify-between items-center shadow-lg ">
+    <div
+      className={
+        "flex w-full p-4 justify-between md:flex md:justify-between items-center shadow-lg " +
+        (isDarkTheme && "bg-gray-800 text-white")
+      }
+    >
       {/* Mobile Menu Icon */}
       <div className="flex items-center md:w-6/12 md:justify-between ">
         <div className="flex md:items-center">
-          <img
-            onClick={() => {
-              toggleMenuHandler();
-            }}
+          {/* <img
             className="h-7 -mx-1 block  sm:block cursor-pointer"
             alt="menu"
             src="https://img.icons8.com/?size=512&id=59832&format=png"
-          />
+          /> */}
+          <button>
+            <i
+              className={
+                "text-[25px] -mx-1 block  sm:block cursor-pointer fa-solid fa-bars " +
+                (isDarkTheme && "text-white")
+              }
+              onClick={() => {
+                toggleMenuHandler();
+              }}
+            ></i>
+          </button>
 
           {/* Logo */}
           <a href="/">
@@ -60,9 +80,17 @@ const Head = () => {
           </a>
           {/* Search Box */}
         </div>
-        <div className="relative flex  md:flex-col items-center md:w-1/2">
+        <div
+          className={
+            "relative flex  md:flex-col items-center md:w-1/2 " +
+            (isDarkTheme && "text-black")
+          }
+        >
           <input
-            className="border border-gray-200 rounded-2xl md:rounded-l-full pl-2 md:py-2 md:px-6  py-1 w-full"
+            className={
+              "border border-gray-200 rounded-2xl md:rounded-l-full pl-2 md:py-2 md:px-6  py-1 w-full " +
+              (isDarkTheme && "bg-gray-800 text-white border-black")
+            }
             placeholder="Search"
             type="text"
             value={searchQuery}
@@ -72,12 +100,26 @@ const Head = () => {
             onFocus={() => setShowSuggestions(true)}
             onBlur={() => setShowSuggestions(false)}
           />
-          <button className="absolute md:-my-[1px] md:-mr-5 right-0 mr-2 md:px-4 md:py-[10px] md:bg-gray-200 md:rounded-r-full">
-            🔍
+          <button
+            className={
+              "absolute md:-my-[1px] md:-mr-5 right-0 mr-2 md:px-4 md:py-[10px] md:bg-gray-200 md:rounded-r-full " +
+              (isDarkTheme && "md:bg-gray-600")
+            }
+          >
+            <i
+              class={
+                "fa-solid fa-magnifying-glass " + (isDarkTheme && "text-white")
+              }
+            ></i>
           </button>
           {/* Suggestions */}
           {showSuggestions && (
-            <div className="absolute bg-white pl-2 pr-7 rounded-md mt-2 md:mt-12  w-full ">
+            <div
+              className={
+                "absolute bg-white pl-2 pr-7 rounded-md mt-2 md:mt-12  w-full " +
+                (isDarkTheme && "bg-gray-800 text-white")
+              }
+            >
               <ul>
                 {suggestion.map((words, index) => {
                   return (
@@ -94,13 +136,36 @@ const Head = () => {
           )}
         </div>
       </div>
+      <div className="hidden md:block">
+        <label className="relative inline-flex items-center cursor-pointer">
+          <input
+            type="checkbox"
+            onClick={() => {
+              toggleThemeHandler();
+
+              console.log("theme changed");
+            }}
+            value=""
+            className="sr-only peer"
+          />
+          <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+          <span
+            className={
+              "ml-3 text-sm font-medium " + (isDarkTheme && "text-white")
+            }
+          >
+            Dark/Light Mode
+          </span>
+        </label>
+      </div>
 
       {/* User Icon */}
-      <img
-        className="h-8 md:h-10 mr-1"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcZHZkZFOA8sW0MCEom45CGwmnJdl-RsK5n6-vEbSyqcYBvLBwkLTaYB8gjBXAO9ABhVs&usqp=CAU"
-        alt="user-icon"
-      />
+      <i
+        className={
+          "fa-solid fa-user text-[35px] text-black hover:text-amber-400 " +
+          (isDarkTheme && "text-white ")
+        }
+      ></i>
     </div>
   );
 };

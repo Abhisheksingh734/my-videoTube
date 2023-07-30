@@ -11,6 +11,7 @@ import {
 } from "../utils/helper";
 
 const LiveChat = () => {
+  const isDarkTheme = useSelector((store) => store.app.isDarkTheme);
   const [LiveMessage, setLiveMessage] = useState("");
 
   const dispatch = useDispatch();
@@ -34,7 +35,12 @@ const LiveChat = () => {
 
   return (
     <>
-      <div className=" w-full  h-[600px] rounded-xl m-2 p-2 border overflow-scroll  flex flex-col-reverse">
+      <div
+        className={
+          " w-full  h-[600px] rounded-xl m-2 p-2 border overflow-scroll  flex flex-col-reverse " +
+          (isDarkTheme && "bg-gray-600 border-black text-white")
+        }
+      >
         {chatMessages.map((c, index) => (
           <ChatMessage
             key={index}
@@ -56,16 +62,28 @@ const LiveChat = () => {
             })
           );
         }}
-        className="border rounded-xl p-2 bg-gray-200"
+        className={
+          "border rounded-xl p-2 bg-gray-200 " + (isDarkTheme && "bg-gray-800")
+        }
       >
         <input
           value={LiveMessage}
           onChange={(e) => setLiveMessage(e.target.value)}
           type="text"
           placeholder="Send Your Message"
-          className="-ml-1 border border-gray-500 rounded-lg mx-2 w-96 p-2"
+          className={
+            "-ml-1 border border-gray-500 rounded-lg mx-2 w-96 p-2 " +
+            (isDarkTheme && "bg-black text-white border-black")
+          }
         />
-        <button className="bg-green-200 rounded-xl p-1">Send</button>
+        <button
+          className={
+            "bg-green-200 rounded-xl p-2 " +
+            (isDarkTheme && "text-black border-black")
+          }
+        >
+          Send
+        </button>
       </form>
     </>
   );
