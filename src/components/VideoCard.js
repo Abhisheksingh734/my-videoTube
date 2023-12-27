@@ -11,7 +11,7 @@ const VideoCard = ({ info }) => {
   return (
     <div
       className={
-        " w-[461px] sm:w-[304px] md:h-[345px] md:hover:scale-105 sm:mx-4 sm:my-2 h-fit my-2 rounded-lg bg-gray-100  shadow-xl  transition-all ease-in-out hover:shadow-2xl " +
+        " w-[460px] sm:w-[280px] md:h-[345px] md:hover:scale-105 sm:mx-4 sm:my-2 h-fit my-2 rounded-lg bg-gray-100  shadow-xl  transition-all ease-in-out hover:shadow-2xl " +
         (isDarkTheme && "bg-gray-900 hover:shadow-white")
       }
     >

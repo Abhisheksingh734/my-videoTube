@@ -21,6 +21,7 @@ const Head = () => {
     console.log("API CALL-" + searchQuery);
     const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const json = await data.json();
+    console.log(json);
 
     setSuggestion(json[1]);
   };
