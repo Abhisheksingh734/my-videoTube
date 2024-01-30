@@ -43,7 +43,7 @@ const Head = () => {
     <div
       className={
         "flex w-full p-4 justify-between md:flex md:justify-between items-center shadow-lg " +
-        (isDarkTheme && "bg-gray-800 text-white")
+        (isDarkTheme && "bg-gray-800 ")
       }
     >
       {/* Mobile Menu Icon */}
@@ -108,17 +108,18 @@ const Head = () => {
             }
           >
             <i
-              class={
+              className={
                 "fa-solid fa-magnifying-glass " + (isDarkTheme && "text-white")
               }
             ></i>
           </button>
           {/* Suggestions */}
+          {console.log(isDarkTheme)}
           {showSuggestions && (
             <div
               className={
                 "absolute bg-white pl-2 pr-7 rounded-md mt-2 md:mt-12  w-full " +
-                (isDarkTheme && "bg-gray-800 text-white")
+                (isDarkTheme && " text-white bg-slate-700")
               }
             >
               <ul>
