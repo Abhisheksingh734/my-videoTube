@@ -1,8 +1,8 @@
-# YouTube Clone App 📺🚀
+# Video Tube App 📺🚀
 
 ## Introduction
 
-Welcome to the YouTube Clone App, a cutting-edge Single Page App built using React! This project showcases my passion for web development and the implementation of major React concepts. The app delivers an immersive video streaming experience with seamless navigation and interactive features.
+Welcome to Video Tube, a cutting-edge Single Page App built using React! This project showcases my passion for web development and the implementation of major React concepts. The app delivers an immersive video streaming experience with seamless navigation and interactive features.
 
 ## Features
 
